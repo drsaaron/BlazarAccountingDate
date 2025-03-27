@@ -6,7 +6,8 @@ package com.blazartech.blazaraccountingdate.data.access.impl.mongo;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
@@ -18,8 +19,9 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
  */
 @Configuration
 @EnableMongoRepositories(basePackages = "com.blazartech.blazaraccountingdate.data.access.impl.mongo")
-@Slf4j
 public class MongoDBConfig extends AbstractMongoClientConfiguration {
+    
+    private static final Logger log = LoggerFactory.getLogger(MongoDBConfig.class);
     
     @Value("${accountingDate.databaseName}")
     private String databaseName;
