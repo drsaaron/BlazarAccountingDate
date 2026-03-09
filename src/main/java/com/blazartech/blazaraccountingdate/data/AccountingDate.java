@@ -59,6 +59,11 @@ public class AccountingDate {
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
+
+    @Override
+    public String toString() {
+        return "AccountingDate{" + "id=" + id + ", accountingDate=" + accountingDate + ", startTime=" + startTime + ", endTime=" + endTime + '}';
+    }
     
     
 }
