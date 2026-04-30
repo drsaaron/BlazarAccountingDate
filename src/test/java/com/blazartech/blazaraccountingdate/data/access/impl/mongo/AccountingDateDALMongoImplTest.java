@@ -8,6 +8,7 @@ import com.blazartech.blazaraccountingdate.data.AccountingDate;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Optional;
 import org.junit.jupiter.api.AfterAll;
@@ -145,5 +146,13 @@ public class AccountingDateDALMongoImplTest {
         assertTrue(oldCurrentDate.isPresent());
         assertNotNull(oldCurrentDate.get().getEndDate());
         assertEquals(newDate.getStartTime(), oldCurrentDate.get().getEndDate());
+    }
+    
+    @Test
+    public void testGetAllAccountingDates() {
+        log.info("getAllAccountingDates");
+        
+        Collection<AccountingDate> dates = instance.getAllAccountingDates();
+        assertEquals(2, dates.size());
     }
 }

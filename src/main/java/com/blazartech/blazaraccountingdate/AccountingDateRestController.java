@@ -6,6 +6,7 @@ package com.blazartech.blazaraccountingdate;
 
 import com.blazartech.blazaraccountingdate.data.AccountingDate;
 import com.blazartech.blazaraccountingdate.data.AccountingDateDAL;
+import java.util.Collection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +30,11 @@ public class AccountingDateRestController {
         log.info("getting current accounting date");
         
         return dal.getAccountingDate();
+    }
+    
+    @GetMapping("/v1/all")
+    public Collection<AccountingDate> getAllAccoutingDates() {
+        log.info("getting all accounting dates");
+        return dal.getAllAccountingDates();
     }
 }

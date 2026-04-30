@@ -5,6 +5,7 @@
 package com.blazartech.blazaraccountingdate.data;
 
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.Date;
 
 /**
@@ -35,4 +36,10 @@ public interface AccountingDateDAL {
      * @return 
      */
     public AccountingDate addAccountingDate(Date effectiveTimestamp, LocalDate newAccountingDate);
+    
+    /**
+     * get the history of accounting dates.  (makes it easier to query)
+     * @return 
+     */
+    public Collection<AccountingDate> getAllAccountingDates();
 }
