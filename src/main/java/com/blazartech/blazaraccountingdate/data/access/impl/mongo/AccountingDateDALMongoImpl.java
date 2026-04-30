@@ -12,8 +12,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,9 +21,8 @@ import org.springframework.stereotype.Service;
  * @author scott
  */
 @Service
+@Slf4j
 public class AccountingDateDALMongoImpl implements AccountingDateDAL {
-
-    private static final Logger log = LoggerFactory.getLogger(AccountingDateDALMongoImpl.class);
 
     @Autowired
     private AccountingDateDataRepository accountingDateRepository;

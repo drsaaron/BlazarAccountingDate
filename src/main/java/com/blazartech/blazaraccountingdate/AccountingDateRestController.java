@@ -7,8 +7,7 @@ package com.blazartech.blazaraccountingdate;
 import com.blazartech.blazaraccountingdate.data.AccountingDate;
 import com.blazartech.blazaraccountingdate.data.AccountingDateDAL;
 import java.util.Collection;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,9 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @author scott
  */
 @RestController
+@Slf4j
 public class AccountingDateRestController {
-    
-    private static final Logger log = LoggerFactory.getLogger(AccountingDateRestController.class);
     
     @Autowired
     private AccountingDateDAL dal;
